@@ -12,8 +12,8 @@
 class IField {
 public:
 
-    virtual void at_stay(Player &player) = 0;
-    virtual void at_pass(Player &player) = 0;
+    virtual void actionOnStay(Player &player) = 0;
+    virtual void actionOnPass(Player &player) = 0;
 
 };
 

@@ -26,12 +26,14 @@ public:
     int throwDices();
 
 private:
-    std::vector<Player> players;
-    std::vector<Dice> dices;
+    std::vector<Player> m_players;
+    std::vector<Dice> m_dices;
     Board m_board;
 
     void initializePlayers(unsigned int nrOfPlayers);
     void addDices();
+
+    void movePlayer(Player &player, int nrOfSteps);
 };
 
 

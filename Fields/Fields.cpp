@@ -4,27 +4,27 @@
 
 #include "Fields.h"
 
-void RewardField::at_stay(Player &player) {
+void RewardField::actionOnStay(Player &player) {
     player.deposit(CASH_REWARD_VALUE);
 }
 
-void RewardField::at_pass(Player &player) {
+void RewardField::actionOnPass(Player &player) {
 
 }
 
-void PenaltyField::at_stay(Player &player) {
+void PenaltyField::actionOnStay(Player &player) {
     player.withdraw(CASH_PENALTY_VALUE);
 
 }
 
-void PenaltyField::at_pass(Player &player) {
+void PenaltyField::actionOnPass(Player &player) {
 
 }
 
-void StartField::at_stay(Player &player) {
+void StartField::actionOnStay(Player &player) {
 
 }
 
-void StartField::at_pass(Player &player) {
+void StartField::actionOnPass(Player &player) {
     player.deposit(CASH_START_VALUE);
 }

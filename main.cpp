@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Monopoly.h"
 
-static unsigned int NR_OF_TURNS = 5;
+static unsigned int NR_OF_TURNS = 10;
 
 int main() {
 
@@ -12,6 +12,7 @@ int main() {
     }
     Monopoly monopoly(nrOfplayers);
     monopoly.simulateGame(NR_OF_TURNS);
+
 
     return 0;
 }

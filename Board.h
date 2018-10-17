@@ -12,6 +12,7 @@
 class Board {
 public:
     static const unsigned int NUMBER_OF_FIELDS = 40;
+    static const unsigned int LAST_FIELD_INDEX = NUMBER_OF_FIELDS - 1;
 
     Board();
     Board(int nrOfFields);

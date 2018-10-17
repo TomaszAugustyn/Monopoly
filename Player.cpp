@@ -4,6 +4,7 @@
 
 #include "Player.h"
 #include "Monopoly.h"
+#include "Board.h"
 
 Player::Player(unsigned int playerNr, const std::string &name) : m_playerNr(playerNr), m_name(name), m_fieldNr(0), m_money(Monopoly::INITIAL_AMOUNT_OF_MONEY) {
 
@@ -25,7 +26,15 @@ unsigned int Player::getFieldNr() const {
     return m_fieldNr;
 }
 
-void Player::setFieldNr(unsigned int m_fieldNr) {
-    Player::m_fieldNr = m_fieldNr;
+void Player::moveToFieldNr(unsigned int fieldNr) {
+    Player::m_fieldNr =  fieldNr > Board::LAST_FIELD_INDEX ? fieldNr - Board::NUMBER_OF_FIELDS : fieldNr;
+}
+
+const std::string &Player::getName() const {
+    return m_name;
+}
+
+int Player::getMoney() const {
+    return m_money;
 }
 

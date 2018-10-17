@@ -29,5 +29,5 @@ void Board::initializeFields(int fields) {
 }
 
 std::shared_ptr<IField> Board::getField(int fieldNr) {
-    return m_fieldMap[fieldNr];
+    return fieldNr > LAST_FIELD_INDEX ? m_fieldMap[fieldNr - NUMBER_OF_FIELDS] : m_fieldMap[fieldNr];
 }

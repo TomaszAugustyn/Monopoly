@@ -9,8 +9,8 @@
 
 class RewardField : public IField {
 public:
-    void at_stay(Player &player) override;
-    void at_pass(Player &player) override;
+    void actionOnStay(Player &player) override;
+    void actionOnPass(Player &player) override;
 
 private:
     static const unsigned int CASH_REWARD_VALUE = 100;
@@ -18,8 +18,8 @@ private:
 
 class PenaltyField : public IField  {
 public:
-    void at_stay(Player &player) override;
-    void at_pass(Player &player) override;
+    void actionOnStay(Player &player) override;
+    void actionOnPass(Player &player) override;
 private:
     static const unsigned int CASH_PENALTY_VALUE = 300;
 };
@@ -27,8 +27,8 @@ private:
 
 class StartField : public IField {
 public:
-    void at_stay(Player &player) override;
-    void at_pass(Player &player) override;
+    void actionOnStay(Player &player) override;
+    void actionOnPass(Player &player) override;
 private:
     static const unsigned int CASH_START_VALUE = 250;
 };
