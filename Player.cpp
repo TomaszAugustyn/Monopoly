@@ -20,3 +20,12 @@ void Player::withdraw(unsigned int moneyToWithdraw) {
 bool Player::isBancrupt() {
     return m_money <= 0;
 }
+
+unsigned int Player::getFieldNr() const {
+    return m_fieldNr;
+}
+
+void Player::setFieldNr(unsigned int m_fieldNr) {
+    Player::m_fieldNr = m_fieldNr;
+}
+

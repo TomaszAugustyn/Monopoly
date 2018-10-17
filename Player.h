@@ -14,6 +14,11 @@ public:
     void deposit(unsigned int moneyToAdd);
     void withdraw(unsigned int moneyToWithdraw);
     bool isBancrupt();
+
+    unsigned int getFieldNr() const;
+
+    void setFieldNr(unsigned int m_fieldNr);
+
 private:
     unsigned int m_playerNr;
     std::string m_name;
@@ -24,3 +29,4 @@ private:
 
 
 #endif //REFACTORING_PLAYER_H
+

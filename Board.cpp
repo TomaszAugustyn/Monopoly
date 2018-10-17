@@ -3,6 +3,7 @@
 //
 
 #include "Board.h"
+#include "Fields/Fields.h"
 
 Board::Board(int nrOfFields)
 {
@@ -15,13 +16,18 @@ Board::Board()
 }
 
 void Board::initializeFields(int fields) {
-    fieldMap.insert(std::make_pair(0,Field(FieldParam::START)));
+
+    m_fieldMap.insert(std::make_pair(0, new StartField()));
     for (unsigned int i = 1; i < fields; i++){
         if( (i%3) == 0) {
-            fieldMap.insert(std::make_pair(i,Field(FieldParam::PENALTY)));
+            m_fieldMap.insert(std::make_pair(i, new PenaltyField()));
         }
         else {
-            fieldMap.insert(std::make_pair(i,Field(FieldParam::REWARD)));
+            m_fieldMap.insert(std::make_pair(i, new RewardField()));
         }
     }
+}
+
+std::shared_ptr<IField> Board::getField(int fieldNr) {
+    return m_fieldMap[fieldNr];
 }
