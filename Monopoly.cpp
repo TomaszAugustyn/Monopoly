@@ -10,16 +10,17 @@ void Monopoly::simulateGame(unsigned int numberOfTurns) {
 
 }
 
-Monopoly::Monopoly(unsigned int nrOfPlayers) {
+Monopoly::Monopoly(unsigned int nrOfPlayers)
+    : m_board()
+{
     initializePlayers(nrOfPlayers);
     addDices();
 }
 
 void Monopoly::initializePlayers( unsigned int nrOfPlayers)  {
     for (unsigned int i = 0; i < nrOfPlayers; i++){
-        string tmpName;
-        cout << "Podaj imie gracza:"<< endl;
-        cin >> tmpName;
+        std::string tmpName("Player");
+        tmpName += std::to_string(i);
         Player player(i, tmpName);
         players.push_back(player);
     }

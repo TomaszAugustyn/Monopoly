@@ -4,7 +4,10 @@
 
 #include "Board.h"
 
-Board::Board(const std::map<int, Field> &fieldMap) : fieldMap(fieldMap) {}
+Board::Board(int nrOfFields)
+{
+    initializeFields(nrOfFields);
+}
 
 Board::Board()
 {
@@ -12,16 +15,13 @@ Board::Board()
 }
 
 void Board::initializeFields(int fields) {
-    Field tmpField(FieldParam::START);
-    fieldMap.insert(std::make_pair(0,tmpField));
+    fieldMap.insert(std::make_pair(0,Field(FieldParam::START)));
     for (unsigned int i = 1; i < fields; i++){
         if( (i%3) == 0) {
-            Field tmpField2(FieldParam::PENALTY);
-            fieldMap.insert(std::make_pair(i,tmpField2));
+            fieldMap.insert(std::make_pair(i,Field(FieldParam::PENALTY)));
         }
         else {
-            Field tmpField2(FieldParam::REWARD);
-            fieldMap.insert(std::make_pair(i,tmpField2));
+            fieldMap.insert(std::make_pair(i,Field(FieldParam::REWARD)));
         }
     }
 }

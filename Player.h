@@ -11,12 +11,14 @@
 class Player {
 public:
     Player(unsigned int playerNr, const std::string &name);
-
+    void deposit(unsigned int moneyToAdd);
+    void withdraw(unsigned int moneyToWithdraw);
+    bool isBancrupt();
 private:
-    unsigned int playerNr;
-    std::string name;
-    int money;
-    unsigned int fieldNr;
+    unsigned int m_playerNr;
+    std::string m_name;
+    int m_money;
+    unsigned int m_fieldNr;
 
 };
 

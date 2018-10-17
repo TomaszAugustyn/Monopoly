@@ -12,8 +12,6 @@
 #include "Dice.h"
 #include "Board.h"
 
-using namespace std;
-
 class Monopoly {
 public:
     static const unsigned int NR_OF_DICES = 2;

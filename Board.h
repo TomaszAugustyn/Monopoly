@@ -12,7 +12,7 @@ class Board {
 public:
     static const unsigned int NUMBER_OF_FIELDS = 40;
 
-    Board(const std::map<int, Field> &fieldMap);
+    Board(int nrOfFields);
     Board();
 
 private:
