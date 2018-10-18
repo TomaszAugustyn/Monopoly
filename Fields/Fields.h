@@ -4,6 +4,8 @@
 
 #ifndef REFACTORING_FIELDS_H
 #define REFACTORING_FIELDS_H
+
+#include <memory>
 #include "IField.h"
 #include "../Player.h"
 
@@ -56,5 +58,18 @@ private:
     void wannaBuy(Player &player);
 };
 
+
+class BlackHole : public IField {
+public:
+    void actionOnStay(Player &player) override;
+
+    void actionOnPass(Player &player) override;
+
+    BlackHole(const std::shared_ptr<IField> field);
+
+private:
+    std::shared_ptr<IField> m_field;
+    bool m_blackHoleActive;
+};
 
 #endif //REFACTORING_FIELDS_H

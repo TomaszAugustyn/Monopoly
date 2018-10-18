@@ -69,3 +69,26 @@ void TownField::wannaBuy(Player &player) {
 //    }
 
 }
+
+
+
+void BlackHole::actionOnStay(Player &player) {
+    if(m_blackHoleActive)
+    {
+        m_blackHoleActive = false;
+    }
+    else {
+        m_blackHoleActive = true;
+        m_field->actionOnStay(player);
+    }
+}
+
+void BlackHole::actionOnPass(Player &player) {
+
+}
+
+BlackHole::BlackHole(const std::shared_ptr<IField> field)
+    :m_field(field)
+    ,m_blackHoleActive(false)
+{
+}

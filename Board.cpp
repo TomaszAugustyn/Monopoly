@@ -20,7 +20,9 @@ void Board::initializeFields(int fields) {
     m_fieldMap.insert(std::make_pair(0, new StartField()));
     for (unsigned int i = 1; i < fields; i++){
         if((i%10) == 0) {
-            m_fieldMap.insert(std::make_pair(i, new PrisonField()));
+            //PrisonField toDecorateField();
+            //auto tmp = std::make_shared<IField>(toDecorateField);
+            m_fieldMap.insert(std::make_pair(i, new BlackHole(std::make_shared<PrisonField>())));
         }
         else if( (i%3) == 0) {
             m_fieldMap.insert(std::make_pair(i, new PenaltyField()));
