@@ -19,7 +19,10 @@ void Board::initializeFields(int fields) {
 
     m_fieldMap.insert(std::make_pair(0, new StartField()));
     for (unsigned int i = 1; i < fields; i++){
-        if( (i%3) == 0) {
+        if((i%10) == 0) {
+            m_fieldMap.insert(std::make_pair(i, new PrisonField()));
+        }
+        else if( (i%3) == 0) {
             m_fieldMap.insert(std::make_pair(i, new PenaltyField()));
         }
         else {

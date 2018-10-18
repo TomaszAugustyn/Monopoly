@@ -6,7 +6,7 @@
 #include "Monopoly.h"
 #include "Board.h"
 
-Player::Player(unsigned int playerNr, const std::string &name) : m_playerNr(playerNr), m_name(name), m_fieldNr(0), m_money(Monopoly::INITIAL_AMOUNT_OF_MONEY) {
+Player::Player(unsigned int playerNr, const std::string &name) : m_playerNr(playerNr), m_name(name), m_fieldNr(0), m_money(Monopoly::INITIAL_AMOUNT_OF_MONEY), m_turnsToSkip(0) {
 
 }
 
@@ -36,5 +36,21 @@ const std::string &Player::getName() const {
 
 int Player::getMoney() const {
     return m_money;
+}
+
+unsigned int Player::getPlayerNr() const {
+    return m_playerNr;
+}
+
+void Player::setNrOfTurnsToSkip(unsigned int turnsToSkip) {
+    m_turnsToSkip = turnsToSkip;
+}
+
+void Player::skipATurn() {
+    m_turnsToSkip--;
+}
+
+bool Player::playerInPrison() {
+    return m_turnsToSkip > 0;
 }
 

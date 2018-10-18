@@ -16,17 +16,19 @@ public:
     bool isBancrupt();
     unsigned int getFieldNr() const;
     void moveToFieldNr(unsigned int fieldNr);
+    int getMoney() const;
     const std::string &getName() const;
+    unsigned int getPlayerNr() const;
+    void setNrOfTurnsToSkip(unsigned int turnsToSkip);
+    void skipATurn();
+    bool playerInPrison();
 
 private:
     unsigned int m_playerNr;
     std::string m_name;
     int m_money;
-public:
-    int getMoney() const;
-
-private:
     unsigned int m_fieldNr;
+    unsigned int m_turnsToSkip;
 
 };
 

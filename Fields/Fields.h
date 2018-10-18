@@ -21,7 +21,7 @@ public:
     void actionOnStay(Player &player) override;
     void actionOnPass(Player &player) override;
 private:
-    static const unsigned int CASH_PENALTY_VALUE = 300;
+    static const unsigned int CASH_PENALTY_VALUE = 400;
 };
 
 
@@ -31,6 +31,24 @@ public:
     void actionOnPass(Player &player) override;
 private:
     static const unsigned int CASH_START_VALUE = 250;
+};
+
+class PrisonField : public IField {
+public:
+    void actionOnStay(Player &player) override;
+    void actionOnPass(Player &player) override;
+private:
+    static const unsigned int NUMBER_OF_DAYS_IN_PRISON = 3;
+};
+
+class TownField : public IField {
+public:
+    void actionOnStay(Player &player) override;
+    void actionOnPass(Player &player) override;
+private:
+    const unsigned int m_price;
+    const unsigned int m_penaltyAtStay;
+
 };
 
 
