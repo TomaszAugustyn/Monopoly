@@ -15,9 +15,7 @@
 
 class Monopoly {
 public:
-    static const unsigned int NR_OF_DICES = 2;
-    static const unsigned int MIN_NR_OF_DOTS_ON_DICE = 1;
-    static const unsigned int MAX_NR_OF_DOTS_ON_DICE = 6;
+
     static const unsigned int INITIAL_AMOUNT_OF_MONEY = 1000;
 
     Monopoly(unsigned int nrOfPlayers);
@@ -26,10 +24,9 @@ public:
 
 private:
     Players m_players;
-    std::vector<Dice> m_dices;
     Board m_board;
+    Dice m_dice;
 
-    void addDices();
     void movePlayer(Player &player, int nrOfSteps);
     void movePlayers(int roundNumber);
 };

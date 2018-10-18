@@ -1,18 +1,23 @@
 //
-// Created by Administrator on 2018-10-16.
+// Created by Administrator on 2018-10-18.
 //
 
-#include <cstdlib>
 #include "Dice.h"
 
-Dice::Dice(unsigned int minNrOfDots, unsigned int maxNrOfDots) {
 
-    this->minNrOfDots = minNrOfDots;
-    this->maxNrOfDots = maxNrOfDots;
+void Dice::addDices() {
+    for(int i=0; i<NR_OF_DICES; i++){
+        Die die;
+        m_dices.push_back(die);
+    }
 }
 
-int Dice::throwDice() {
-    return rand() % maxNrOfDots + minNrOfDots;
+int Dice::throwDices() {
+    int sum = 0;
+    for(Die& d : m_dices)
+    {
+        sum += d.throwDice();
+    }
+    return sum;
+
 }
-
-

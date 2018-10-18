@@ -24,7 +24,7 @@ void Monopoly::movePlayers(int roundNumber) {
             std::cout << "Player " << player.getName() << " is in prison! He is skipping a turn. Prison at field: " << player.getFieldNr() << std::endl;
             continue;
         }
-        movePlayer(player, throwDices());
+        movePlayer(player, m_dice.throwDices());
         if(player.isBancrupt())
         {
             std::cout << "Player " << player.getName() << " lost !" <<std::endl;
@@ -53,25 +53,6 @@ Monopoly::Monopoly(unsigned int nrOfPlayers)
     : m_board()
 {
     m_players =  Players(nrOfPlayers);
-    addDices();
+    m_dice.addDices();
 }
 
-
-
-void Monopoly::addDices() {
-    for(int i=0; i<NR_OF_DICES; i++){
-        Dice dice(MIN_NR_OF_DOTS_ON_DICE, MAX_NR_OF_DOTS_ON_DICE);
-        m_dices.push_back(dice);
-    }
-
-}
-
-int Monopoly::throwDices() {
-    int sum = 0;
-    for(Dice& d : m_dices)
-    {
-        sum += d.throwDice();
-    }
-    return sum;
-
-}
