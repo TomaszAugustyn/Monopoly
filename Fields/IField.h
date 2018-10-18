@@ -15,6 +15,7 @@ public:
     virtual void actionOnStay(Player &player) = 0;
     virtual void actionOnPass(Player &player) = 0;
 
+
 };
 
 

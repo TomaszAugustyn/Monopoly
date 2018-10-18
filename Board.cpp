@@ -34,3 +34,10 @@ void Board::initializeFields(int fields) {
 std::shared_ptr<IField> Board::getField(int fieldNr) {
     return fieldNr > LAST_FIELD_INDEX ? m_fieldMap[fieldNr - NUMBER_OF_FIELDS] : m_fieldMap[fieldNr];
 }
+
+void Board::releasePlayerFields(unsigned int playerNumber) {
+    for( auto& field : m_fieldMap)
+    {
+        //field.removeOwner(playerNumber);
+    }
+}

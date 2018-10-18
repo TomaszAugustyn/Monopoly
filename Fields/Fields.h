@@ -43,12 +43,17 @@ private:
 
 class TownField : public IField {
 public:
+    TownField(const unsigned int m_price, const unsigned int m_penaltyAtStay);
+    TownField();
+
     void actionOnStay(Player &player) override;
     void actionOnPass(Player &player) override;
 private:
-    const unsigned int m_price;
-    const unsigned int m_penaltyAtStay;
+    const int m_price;
+    const int m_penaltyAtStay;
+    int m_owner;
 
+    void wannaBuy(Player &player);
 };
 
 

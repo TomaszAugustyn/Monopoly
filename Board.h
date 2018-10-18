@@ -17,6 +17,7 @@ public:
     Board();
     Board(int nrOfFields);
     std::shared_ptr<IField> getField(int fieldNr);
+    void releasePlayerFields(unsigned int playerNumber);
 
 private:
     void initializeFields(int fields);

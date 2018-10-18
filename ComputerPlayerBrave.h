@@ -6,7 +6,14 @@
 #define REFACTORING_COMPUTERPLAYERBRAVE_H
 
 
-class ComputerPlayerBrave {
+#include "Player.h"
+
+class ComputerPlayerBrave : public Player {
+
+public:
+    bool wannaBuy(IField field) override;
+
+private:
 
 };
 

@@ -4,6 +4,7 @@
 
 #include "ComputerPlayerUnpredictable.h"
 
-bool ComputerPlayerUnpredictable::wannaBuy(unsigned int fieldNr, int m_price) {
-    
+
+bool ComputerPlayerUnpredictable::wannaBuy(IField field) {
+    return rand() % 2 == 1;
 }

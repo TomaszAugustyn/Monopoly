@@ -6,8 +6,14 @@
 #define REFACTORING_COMPUTERPLAYERCAUTIOUS_H
 
 
-class ComputerPlayerCautious {
+#include "Player.h"
 
+class ComputerPlayerUnpredictable : public Player {
+
+public:
+    bool wannaBuy(IField field) override;
+
+private:
 };
 
 
