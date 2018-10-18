@@ -7,7 +7,7 @@
 
 
 #include <string>
-#include "Fields/IField.h"
+//#include "Fields/IField.h"
 
 class Player {
 public:
@@ -23,7 +23,7 @@ public:
     void setNrOfTurnsToSkip(unsigned int turnsToSkip);
     void skipATurn();
     bool playerInPrison();
-    virtual bool wannaBuy(IField field);
+    //virtual bool wannaBuy(IField* field);
 
 protected:
     unsigned int m_playerNr;

@@ -11,7 +11,7 @@
 class ComputerPlayerUnpredictable : public Player {
 
 public:
-    bool wannaBuy(IField field) override;
+   // bool wannaBuy(IField* field) override;
 
 private:
 };

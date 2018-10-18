@@ -5,6 +5,6 @@
 #include "ComputerPlayerUnpredictable.h"
 
 
-bool ComputerPlayerUnpredictable::wannaBuy(IField field) {
-    return rand() % 2 == 1;
-}
+//bool ComputerPlayerUnpredictable::wannaBuy(IField* field) {
+//    return rand() % 2 == 1;
+//}

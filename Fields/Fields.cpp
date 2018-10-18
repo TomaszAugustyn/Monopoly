@@ -63,9 +63,9 @@ m_owner(-1)
 
 void TownField::wannaBuy(Player &player) {
 
-    if (player.wannaBuy(*this))
-    {
-
-    }
+//    if (player.wannaBuy(*this))
+//    {
+//
+//    }
 
 }
